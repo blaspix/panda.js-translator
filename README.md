@@ -6,6 +6,35 @@ The plugin goal is to provide an easy way to translate a game for several langua
 Please donate to help BLASPIX support the ongoing development.
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif "Donate")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QR5TU7Q8NEANQ)
 
+### Configuration
+
+- **file** Language JSON file path (default 'media/lang.json')
+- **fallback** Fallback language code (default 'en')
+- **lang** Target language code (default user language)
+
+There are two ways to change settings.
+
+1) In code:
+
+```
+game.Translator.file = 'media/[...].json';
+game.Translator.fallback = '[...]';
+game.Translator.lang = '[...]';
+```
+
+2) In src/game/config.js file:
+
+```
+pandaConfig = {
+    ...
+    translator: {
+        file: 'media/[...].json',
+        fallback: '[...]',
+        lang: '[...]'
+    }
+};
+```
+
 ### Usages
 
 **src/game/main.js**
@@ -62,7 +91,9 @@ game.start();
 });
 ```
 
-**media/messages.json**
+### Template example
+
+**media/lang.json**
 ```
 {
     "en": {
@@ -110,11 +141,6 @@ game.start();
     }
 }
 ```
-
-### Global parameters
-
-- pandaConfig.translatorFallback (default 'en')
-- pandaConfig.translatorLanguage (default navigator language)
 
 ### License
 

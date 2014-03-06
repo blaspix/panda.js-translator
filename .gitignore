@@ -1,7 +1,4 @@
 *
-!/media
-/media/*
-!/media/messages.json
 !/src
 /src/*
 !/src/game

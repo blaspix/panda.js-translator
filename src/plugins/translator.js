@@ -5,7 +5,6 @@ game.module(
 
 game.Translator = game.Class.extend({
     messages: null,
-    fallback: 'en',
 
     init: function () {
         game.addAsset(game.Translator.file);
@@ -13,8 +12,9 @@ game.Translator = game.Class.extend({
     },
 
     translate: function (message, params) {
-        if(!this.messages) this.messages = game.getJSON(game.Translator.file);
-
+        if(!this.messages) {
+            this.messages = game.getJSON(game.Translator.file);
+        }
         var messageLanguage, messageBlock, messageFallback, blocks, i;
         if(typeof message === 'function') {
             message = message();
@@ -34,11 +34,11 @@ game.Translator = game.Class.extend({
             }
         }
         if(typeof messageLanguage !== 'string') {
-            if(typeof this.messages[this.fallback] === 'object' ) {
-                if(typeof this.messages[this.fallback][message] === 'string' ) {
-                    messageFallback = this.messages[this.fallback][message];
+            if(typeof this.messages[game.Translator.fallback] === 'object' ) {
+                if(typeof this.messages[game.Translator.fallback][message] === 'string' ) {
+                    messageFallback = this.messages[game.Translator.fallback][message];
                 } else {
-                    messageBlock = this.messages[this.fallback];
+                    messageBlock = this.messages[game.Translator.fallback];
                     blocks = message.split('.');
                     for(i = 0; i < blocks.length; i++) {
                         messageBlock = messageBlock[blocks[i]];
@@ -59,8 +59,9 @@ game.Translator = game.Class.extend({
     }
 });
 
-game.Translator.lang = navigator.userLanguage || navigator.language;
 game.Translator.file = 'media/lang.json';
+game.Translator.fallback = 'en';
+game.Translator.lang = navigator.userLanguage || navigator.language;
 
 game.plugins.translator = game.Translator;
 
