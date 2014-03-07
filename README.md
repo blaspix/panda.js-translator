@@ -146,12 +146,12 @@ game.start();
 
 Panda.js Translator is released under the [MIT License](http://opensource.org/licenses/MIT).
 
-## Donation
+### Donation
 
 Please donate to help BLASPIX support the ongoing development.
 [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif "Donate")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=QR5TU7Q8NEANQ)
 
-## Keywords
+### Keywords
 ```
 internationalisation, i18n, localization, l10n
 ```
