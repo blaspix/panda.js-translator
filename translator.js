@@ -2,6 +2,7 @@ game.module(
     'plugins.translator'
 )
 .body(function () {
+'use strict';
 
 game.Translator = game.Class.extend({
     messages: null,
