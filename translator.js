@@ -59,7 +59,7 @@ game.Translator = game.Class.extend({
     }
 });
 
-game.Translator.file = 'media/lang.json';
+game.Translator.file = 'lang.json';
 game.Translator.fallback = 'en';
 game.Translator.lang = navigator.userLanguage || navigator.language;
 
